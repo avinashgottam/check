@@ -1,5 +1,7 @@
 #!/bin/bash
-echo "vk:hii ra ela unnav"
-echo "v:hii ra super nuvu"
-echo "vk:fine enti ela ochinav"
-echo "v:urke"
+x=vk
+y=v
+echo "$x:hii ra ela unnav"
+echo "$y:hii ra super nuvu"
+echo "$x:fine enti ela ochinav"
+echo "$y:urke"
