@@ -38,6 +38,7 @@ VALIDATE $? "enable moongodb"
 systemctl start mongod
 VALIDATE $? "starting moongodb"
 sed -e 's/127.0.0.0/0.0.0.' /etc/mongod.conf &>> $LOGFILE
+VALIDATE $? "remote access"
 sytemctl restart mongod
 VALIDATE $? "restarting mongodb"
 
