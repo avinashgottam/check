@@ -1,25 +1,31 @@
 #!/bin/bash
+
 ID=$(id -u)
-if [ ID ne 0 ]
+
+if [ $ID -ne 0 ]
 then
-    echo "Error::please run the script in root user"
-    exit 1
+    echo "ERROR:: Please run this script with root access"
+    exit 1 
 else
-    echo "Your are root User"
-fi        
+    echo "You are root user"
+fi 
+
 yum install mysql -y
-if [ $? ne 0]
+
+if [ $? -ne 0 ]
 then
-    echo "Installing failed"
+    echo "ERROR:: Installing MySQL is failed"
     exit 1
 else
-    echo "Sucess Installation"
-fi        
+    echo "Installing MySQL is SUCCESS"
+fi
+
 yum install git -y
-if [ $? ne 0]
+
+if [ $? -ne 0 ]
 then
-    echo "Installing failed"
+    echo "ERROR:: Installing GIT is failed"
     exit 1
 else
-    echo "Sucess Installation"
-fi        
+    echo "Installing GIT is SUCCESS"
+fi
