@@ -49,7 +49,7 @@ cp /home/centos/check/project01/cart.service /etc/systemd/system/cart.service
 
 systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "Daemon reloading"
-systemctl enable user &>> $LOGFILE
-VALIDATE $? "Enabling user"
-systemctl start user &>> $LOGFILE
-VALIDATE $? "Starting User"
+systemctl enable cart &>> $LOGFILE
+VALIDATE $? "Enabling cart"
+systemctl start cart &>> $LOGFILE
+VALIDATE $? "Starting cart"
