@@ -30,8 +30,8 @@ if [ $? -ne 0 ]
 then 
     echo "useradd roboshop"
 else
-    echo "User already exits Skipping"
-fi  
+    echo "Already exits  Skipping" 
+fi
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.zip &>> LOGFILE
