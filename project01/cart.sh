@@ -36,7 +36,7 @@ if [ $? -ne 0 ]
 then 
     echo "useradd roboshop"
 else
-    echo "Already exits $Y Skipping$N" 
+    echo "Already exits  Skipping" 
 fi  
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
