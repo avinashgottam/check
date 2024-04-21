@@ -56,7 +56,7 @@ VALIDATE $? "unzipping"
 npm install &>> $LOGFILE
 VALIDATE $? "installing client"
 
-cp /home/centos/check/project01/check/project01/catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/check/project01/catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload  &>> $LOGFILE
 VALIDATE $? "daemon reloading"
 
@@ -66,7 +66,7 @@ VALIDATE $? "system enabling"
 systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "system starting"
 
-cp /home/centos/check/project01/check/project01/mongo.repo /etc/yum.repos.d/mongo.repo 
+cp /home/centos/check/project01/mongo.repo /etc/yum.repos.d/mongo.repo 
 
 dnf install mongodb-org-shell -y 
 
