@@ -34,10 +34,8 @@ id roboshop
 if [ $? -ne 0 ]
 then 
     echo "useradd roboshop"
-    exit 1
-    VALIDATE $? "Adding user"
 else
-    echo "Already exits $Y Skipping$N" 
+    echo "Already exits Skipping" 
 fi
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
