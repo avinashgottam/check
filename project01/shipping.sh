@@ -23,7 +23,7 @@ then
 else    
     echo -e "Your are $G Root User $N"
 fi
-dnf install maven -y &>> $LOGFILE  $
+dnf install maven -y &>> $LOGFILE  
 VALIDATE $? "installing maven"
 id roboshop
 if [ $? -ne 0 ]
