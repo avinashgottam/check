@@ -32,16 +32,22 @@ VALIDATE $? "Disabling nodejs"
 
 dnf module enable nodejs:18 -y &>> $LOGFILE
 VALIDATE $? "Enabling nodejs18"
+id roboshop
+if [ $?-ne 0 ]
+then 
+     useradd roboshop
+     VALIDATE $? "Adding user"
+else 
+    echo -e "already exits $Y skipping$N"
+fi        
 
-useradd roboshop &>> $LOGFILE
-VALIDATE $? "Adding user"
 
-mkdir /app &>> $LOGFILE
+mkdir -p /app &>> $LOGFILE
 VALIDATE $? "adding directory"
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 cd /app 
-unzip /tmp/catalogue.zip &>> $LOGFILE
+unzip -o /tmp/catalogue.zip &>> $LOGFILE
 VALIDATE $? "unzipping"
 
 npm install &>> $LOGFILE
