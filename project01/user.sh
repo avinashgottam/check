@@ -36,8 +36,8 @@ then
     echo "useradd roboshop"
 else
     echo "Already exits $Y Skipping$N" 
-
-mkdir -p &>> $LOGFILE
+fi
+mkdir -p app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>> $LOGFILE
 cd /app 
