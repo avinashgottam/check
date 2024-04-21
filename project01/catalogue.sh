@@ -66,7 +66,8 @@ VALIDATE $? "system enabling"
 systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "system starting"
 
-cp d/home/centos/shell-script/project01/mongo.repo /etc/yum.repos.d/mongo.repo 
+cp /home/centos/check/project01/check/project01/
+mongo.repo /etc/yum.repos.d/mongo.repo 
 
 dnf install mongodb-org-shell -y 
 
