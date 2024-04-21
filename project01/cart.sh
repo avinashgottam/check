@@ -31,14 +31,12 @@ VALIDATE $? "Enabling nodejs 18"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "installing nodejs 18"
 id roboshop
-if [ $? -ne 0 ] 
+if [ $? -ne 0 ]
 then 
-     useradd roboshop
-     exit 1
-     VALIDATE $? "Adding user"
-else 
-    echo -e "already exits $Y skipping$N"
-fi       
+    echo "useradd roboshop"
+else
+    echo "Already exits $Y Skipping$N" 
+fi  
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>> $LOGFILE
