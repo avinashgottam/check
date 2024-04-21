@@ -68,7 +68,8 @@ VALIDATE $? "system starting"
 
 cp /home/centos/check/project01/mongo.repo /etc/yum.repos.d/mongo.repo 
 
-dnf install mongodb-org-shell -y 
+dnf install mongodb-org-shell -y &>> $LOGFILE
+
 
 mongo --host 172.31.31.146 </app/schema/catalogue.js &>> $LOGFILE
 VALIDATE $? "loading catalogue data"
