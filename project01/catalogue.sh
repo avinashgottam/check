@@ -39,6 +39,7 @@ id roboshop
 if [ $? -ne 0 ] 
 then 
      useradd roboshop
+     exit 1
      VALIDATE $? "Adding user"
 else 
     echo -e "already exits $Y skipping$N"

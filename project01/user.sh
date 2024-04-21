@@ -30,8 +30,14 @@ dnf module enable nodejs:18 -y &>> $LOGFILE
 VALIDATE $? "Enabling nodejs 18"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "installing nodejs 18"
-useradd roboshop 
-mkdir /app &>> $LOGFILE
+id roboshop
+if [ $? -ne 0 ]
+then 
+    echo "useradd roboshop"
+else
+    echo "Already exits $Y Skipping$N" 
+
+mkdir -p &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>> $LOGFILE
 cd /app 
