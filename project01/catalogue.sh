@@ -32,6 +32,9 @@ VALIDATE $? "Disabling nodejs"
 
 dnf module enable nodejs:18 -y &>> $LOGFILE
 VALIDATE $? "Enabling nodejs18"
+
+dnf install nodejs -y &>> $LOGFILE
+VALIDATE $? "installing nodejs"
 id roboshop
 if [ $?-ne 0 ]
 then 
@@ -67,7 +70,7 @@ cp /home/centos/shell-script/project01/mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org-shell -y 
 
-mongo --host 172.31.21.179 </app/schema/catalogue.js &>> $LOGFILE
+mongo --host 172.31.31.146 </app/schema/catalogue.js &>> $LOGFILE
 VALIDATE $? "loading catalogue data"
 
 
