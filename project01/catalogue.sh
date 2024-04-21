@@ -36,7 +36,7 @@ VALIDATE $? "Enabling nodejs18"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "installing nodejs"
 id roboshop
-if [ $? -ne 0 ]
+if [ $? -ne 0 ] 
 then 
      useradd roboshop
      VALIDATE $? "Adding user"
@@ -56,7 +56,7 @@ VALIDATE $? "unzipping"
 npm install &>> $LOGFILE
 VALIDATE $? "installing client"
 
-cp d/home/centos/shell-script/project01/catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/check/project01/check/project01/catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload  &>> $LOGFILE
 VALIDATE $? "daemon reloading"
 
