@@ -9,7 +9,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo "script started excited at $TIMESTAMP" &>> LOGFILE
 VALIDATE(){
-    if [$1 -ne 0 ]
+    if [ $1 -ne 0 ]
     then
         echo -e "Error $2... $R Failed$N"
         exit 1
@@ -22,7 +22,7 @@ then
     echo -e "Error $R your are not Root User$N"
     exit 1
 else    
-    echo -e "Your are $G Root User$N"
+    echo -e "Your are $G Root User $N"
 fi
 dnf module disable nodejs -y &>> $LOGFILE
 VALIDATE $? "Disabling node js"
