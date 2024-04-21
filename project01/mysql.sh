@@ -28,7 +28,7 @@ fi
 dnf module disable mysql -y &>> $LOGFILE
 VALIDATE $? "Disabling my sql"
 
-cp /home/centos/check/project01/mysql.rep /etc/yum.repos.d/mysql.repo
+cp /home/centos/check/project01/mysql.repo /etc/yum.repos.d/mysql.repo
 dnf install mysql-community-server -y &>> $LOGFILE
 VALIDATE $? "installing community server"
 systemctl enable mysqld &>> $LOGFILE
