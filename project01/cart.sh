@@ -37,7 +37,7 @@ then
 else
     echo "Already exits $Y Skipping$N" 
 fi
-mkdir -p app &>> $LOGFILE
+mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>> $LOGFILE
 cd /app 
