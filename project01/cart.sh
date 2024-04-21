@@ -41,7 +41,7 @@ mkdir -p app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>> $LOGFILE
 cd /app 
-unzip /tmp/cart.zip 
+unzip -o /tmp/cart.zip 
 VALIDATE $? "unziping the file"
 npm install  &>> $LOGFILE
 VALIDATE $? "Installing Dependencies"
