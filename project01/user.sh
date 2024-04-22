@@ -33,9 +33,10 @@ VALIDATE $? "installing nodejs 18"
 id roboshop
 if [ $? -ne 0 ]
 then 
-    echo "useradd roboshop"
+    useradd roboshop
+    exit
 else
-    echo "Already exits $Y Skipping$N" 
+    echo -e "Already exits $Y Skipping$N" 
 fi
 mkdir -p app &>> $LOGFILE
 VALIDATE $? "making directory"
