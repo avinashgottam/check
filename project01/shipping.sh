@@ -28,7 +28,8 @@ VALIDATE $? "installing maven"
 id roboshop
 if [ $? -ne 0 ]
 then 
-    echo "useradd roboshop"
+     useradd roboshop
+    exit 1
 else
     echo "Already exits  Skipping" 
 fi
