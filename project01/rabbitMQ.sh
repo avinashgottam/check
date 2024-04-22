@@ -8,7 +8,7 @@ N="\e[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$-$TIMESTAMP.log"
 VALIDATE(){
-    if [ $1 -ne o ]
+    if [ $1 -ne 0 ]
     then 
         echo "ERROR:: $2.... FAILED"
         exit 1
