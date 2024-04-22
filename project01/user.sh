@@ -57,4 +57,4 @@ cp /home/centos/check/project01/mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org-shell -y &>> LOGFILE
 VALIDATE $? "installing client mongodb"
-mongo --host 172.31.31.146 </app/schema/user.js
+mongo --host mongodb.ssrg.online </app/schema/user.js
