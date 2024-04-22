@@ -29,7 +29,7 @@ id roboshop
 if [ $? -ne 0 ]
 then 
      useradd roboshop
-    exit 1
+     exit 1
 else
     echo "Already exits  Skipping" 
 fi
