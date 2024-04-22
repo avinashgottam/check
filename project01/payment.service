@@ -4,11 +4,11 @@ Description=Payment Service
 [Service]
 User=root
 WorkingDirectory=/app
-Environment=CART_HOST=172.31.95.144
+Environment=CART_HOST=cart.ssrg.online
 Environment=CART_PORT=8080
-Environment=USER_HOST=172.31.92.0
+Environment=USER_HOST=user.ssrg.online
 Environment=USER_PORT=8080
-Environment=AMQP_HOST=172.31.95.158
+Environment=AMQP_HOST=rabbitmq.ssrg.online
 Environment=AMQP_USER=roboshop
 Environment=AMQP_PASS=roboshop123
 
