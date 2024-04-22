@@ -32,7 +32,7 @@ systemctl enable rabbitmq-server &>> $LOGFILE
 VALIDATE $? "Enabling rabbitMQ"
 systemctl start rabbitmq-server &>> $LOGFILE
 VALIDATE $? "Starting rabbitMQ"
-rabbitmqctl add_user roboshop roboshop123 &>> $LOGFILE
+rabbitmqctl add_user toysshop roboshop123 &>> $LOGFILE
 VALIDATE $? "creating User"
-rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"  &>> $LOGFILE    
+rabbitmqctl set_permissions -p / toysshop ".*" ".*" ".*"  &>> $LOGFILE    
 VALIDATE $? "Setting Permissions"
