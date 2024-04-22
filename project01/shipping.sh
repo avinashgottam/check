@@ -51,6 +51,6 @@ systemctl start shipping &>> $LOGFILE
 VALIDATE $? "system starting "
 dnf install mysql -y &>> $LOGFILE
 VALIDATE $? "installing mysql"
-mysql -h 172.31.86.90 -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql.ssrg.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
 systemctl restart shipping &>> $LOGFILE
 VALIDATE $? "system restarting "
