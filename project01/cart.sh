@@ -34,7 +34,7 @@ VALIDATE $? "installing nodejs 18"
 id roboshop
 if [ $? -ne 0 ]
 then 
-    echo "useradd roboshop"
+    useradd roboshop
 else
     echo "Already exits  Skipping" 
 fi  
