@@ -1,2 +1,4 @@
 FROM almalinux:8
-CMD ["sleep","200"]
+RUN useradd avinash
+USER avinash
+CMD ["sleep","80"]
