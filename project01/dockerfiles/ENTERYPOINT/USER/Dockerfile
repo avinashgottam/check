@@ -1,2 +1,2 @@
 FROM almalinux:8
-CMD ["Sleep","200"]
+CMD ["sleep","200"]
