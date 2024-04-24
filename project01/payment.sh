@@ -29,6 +29,7 @@ id roboshop
 if [ $? -ne 0 ]
 then 
     echo "useradd roboshop"
+<<<<<<< HEAD
 else
     echo "Already exits Skipping" 
 fi
@@ -41,6 +42,12 @@ then
 else 
     echo -e "already exits $Y skipping$N"
 fi
+=======
+    exit 1
+else
+    echo "Already exits Skipping" 
+fi
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "creating directory"
 curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip
@@ -55,4 +62,8 @@ VALIDATE $? "Daemon Reloading"
 systemctl enable payment &>> $LOGFILE 
 VALIDATE $? "Enabling payment"
 systemctl start payment  &>> $LOGFILE
+<<<<<<< HEAD
 VALIDATE $? "starting Payemnt"
+=======
+VALIDATE $? "starting Payemnt"
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0

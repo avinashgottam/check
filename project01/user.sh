@@ -33,15 +33,16 @@ VALIDATE $? "installing nodejs 18"
 id roboshop
 if [ $? -ne 0 ]
 then 
-    echo "useradd roboshop"
+    useradd roboshop
+    exit 1
 else
-    echo "Already exits $Y Skipping$N" 
+    echo -e "Already exits $Y Skipping$N" 
 fi
 mkdir -p app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>> $LOGFILE
 cd /app 
-unzip /tmp/user.zip 
+unzip -o /tmp/user.zip 
 VALIDATE $? "unziping the file"
 npm install  &>> $LOGFILE
 VALIDATE $? "Installing Dependencies"
@@ -57,4 +58,4 @@ cp /home/centos/check/project01/mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? "installing client mongodb"
-mongo --host 172.31.31.146 </app/schema/user.js
+mongo --host mongodb.ssrg.online </app/schema/user.js

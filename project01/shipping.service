@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [Unit]
 Description=Shipping Service
 
@@ -10,3 +11,17 @@ SyslogIdentifier=shipping
 
 [Install]
 WantedBy=multi-user.target
+=======
+[Unit]
+Description=Shipping Service
+
+[Service]
+User=roboshop
+Environment=CART_ENDPOINT=cart.ssrg.online:8080
+Environment=DB_HOST=mysql.ssrg.online
+ExecStart=/bin/java -jar /app/shipping.jar
+SyslogIdentifier=shipping
+
+[Install]
+WantedBy=multi-user.target
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [Unit]
 Description=Payment Service
 
@@ -18,3 +19,25 @@ SyslogIdentifier=payment
 
 [Install]
 WantedBy=multi-user.target
+=======
+[Unit]
+Description=Payment Service
+
+[Service]
+User=root
+WorkingDirectory=/app
+Environment=CART_HOST=cart.ssrg.online
+Environment=CART_PORT=8080
+Environment=USER_HOST=user.ssrg.online
+Environment=USER_PORT=8080
+Environment=AMQP_HOST=rabbitmq.ssrg.online
+Environment=AMQP_USER=roboshop
+Environment=AMQP_PASS=roboshop123
+
+ExecStart=/usr/local/bin/uwsgi --ini payment.ini
+ExecStop=/bin/kill -9 $MAINPID
+SyslogIdentifier=payment
+
+[Install]
+WantedBy=multi-user.target
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0

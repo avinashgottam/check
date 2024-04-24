@@ -5,6 +5,7 @@ ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+N="\e[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo "script started excited at $TIMESTAMP" &>> LOGFILE
@@ -33,10 +34,16 @@ VALIDATE $? "installing nodejs 18"
 id roboshop
 if [ $? -ne 0 ]
 then 
-    echo "useradd roboshop"
+    useradd roboshop
+    exit 1
 else
+<<<<<<< HEAD
     echo "Already exits Skipping" 
 fi
+=======
+    echo "Already exits  Skipping" 
+fi  
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>> $LOGFILE

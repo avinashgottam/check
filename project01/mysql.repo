@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 [mysql]
 name=MySQL 5.7 Community Server
 baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
 enabled=1
+=======
+[mysql]
+name=MySQL 5.7 Community Server
+baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
+enabled=1
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0
 gpgcheck=0

@@ -23,15 +23,27 @@ then
 else    
     echo -e "Your are $G Root User $N"
 fi
+<<<<<<< HEAD
 dnf install maven -y &>> $LOGFILE  $
+=======
+dnf install maven -y &>> $LOGFILE  
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0
 VALIDATE $? "installing maven"
 id roboshop
 if [ $? -ne 0 ]
 then 
+<<<<<<< HEAD
     echo "useradd roboshop"
 else
     echo "User already exits Skipping"
 fi  
+=======
+     useradd roboshop
+     exit 1
+else
+    echo "Already exits  Skipping" 
+fi
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "making directory"
 curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.zip &>> LOGFILE
@@ -51,6 +63,12 @@ systemctl start shipping &>> $LOGFILE
 VALIDATE $? "system starting "
 dnf install mysql -y &>> $LOGFILE
 VALIDATE $? "installing mysql"
+<<<<<<< HEAD
 mysql -h 172.31.86.90 -uroot -pRoboShop@1 < /app/schema/shipping.sql
 systemctl restart shipping &>> $LOGFILE
 VALIDATE $? "system restarting "
+=======
+mysql -h mysql.ssrg.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
+systemctl restart shipping &>> $LOGFILE
+VALIDATE $? "system restarting "
+>>>>>>> 0dcab8bb322e35dc4dd9b2c1a3de0ebc6161bcf0
