@@ -1,4 +1,5 @@
 FROM almalinux:8
-USER $(username:avinash)
 ARG username
+RUN adduser $username
 USER $username
+CMD ["sleep","50"]
