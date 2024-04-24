@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
-echo "script started excited at $TIMESTAMP" &>> LOGFILE
+echo "script started excited at $TIMESTAMP" &>> $LOGFILE
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
