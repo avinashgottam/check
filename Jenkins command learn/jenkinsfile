@@ -6,17 +6,20 @@ pipeline{
     }
 //start here    
 stages{
-    stage(''){
+    stage('learn'){
         steps{
             echo "learning"
         }    
     }
-    stage(''){
+    stage('cdci'){
         steps{
             echo 'Cd/Ci using jenkins'
         }
     }
-        
+    stage('Deploy'){
+        steps{
+            echo 'Deploying'
+        }
+    }    
     }
 }    
-}
