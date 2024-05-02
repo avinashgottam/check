@@ -1,9 +1,5 @@
 pipeline{
-    agent{
-        node{
-            label 'Agent-1'
-        }
-    }
+    agent any
 //start here    
 stages{
     stage('learn'){
@@ -13,12 +9,12 @@ stages{
     }
     stage('cdci'){
         steps{
-            echo 'Cd/Ci using jenkins'
+            echo "Cd/Ci using jenkins"
         }
     }
     stage('Deploy'){
         steps{
-            echo 'Deploying'
+            echo "Deploying"
         }
     }    
     }
