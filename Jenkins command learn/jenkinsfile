@@ -1,0 +1,22 @@
+pipeline{
+    agent{
+        node{
+            label 'Agent-1'
+        }
+    }
+//start here    
+stages{
+    stage(''){
+        steps{
+            echo "learning"
+        }    
+    }
+    stage(''){
+        steps{
+            echo 'Cd/Ci using jenkins'
+        }
+    }
+        
+    }
+}    
+}
