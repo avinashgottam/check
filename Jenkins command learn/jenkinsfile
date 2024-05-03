@@ -22,4 +22,9 @@ stages{
         }
     }    
     }
+    post{
+        always{
+            echo 'i will always say hello'
+        }
+    }
 }    
